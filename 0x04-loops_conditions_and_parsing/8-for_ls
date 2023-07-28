@@ -3,5 +3,5 @@
 
 for v in *
 do
-	echo "$v"
+	echo "${v:2}"
 done
