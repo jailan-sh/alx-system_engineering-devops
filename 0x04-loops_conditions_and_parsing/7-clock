@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying 1-20
+# This script is displaying Hour
 
 i="0"
 while ((i<="12"))

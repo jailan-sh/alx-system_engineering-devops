@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script is displaying ls
+
+for v in *
+do
+	echo "$v"
+done
