@@ -3,5 +3,7 @@
 
 for v in *
 do
-	echo "${v:2}"
+    if [[ "$v" != .* && ! -d "$v" ]]; then
+        echo "${v#*-}"
+    fi
 done
