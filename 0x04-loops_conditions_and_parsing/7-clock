@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script is displaying 1-20
+
+i="0"
+while ((i<="12"))
+do
+	j="1"
+	while ((j<="59"))
+	do
+		echo "$j"
+		((j++))
+	done
+	echo "Hour: $i"
+	((i++))
+done
