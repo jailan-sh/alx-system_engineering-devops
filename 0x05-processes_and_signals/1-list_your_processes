@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#list_processes
+
+ps -aux | less
