@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 connect to your server using the private key ~/.ssh/school with the user ubuntu.
 ssh -i ~/.ssh/school ubuntu@54.209.22.80
+=======
+#connect to your server using the private key ~/.ssh/school with the user ubuntu
+ssh -i ~/.ssh/school ubuntu@3.86.18.153
+>>>>>>> 487161cb87f12c95762ee7128d2b7da99d9000ac
