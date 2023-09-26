@@ -5,18 +5,16 @@ sudo apt-get install -y nginx
 
 mkdir /etc/nginx/html
 
-sudo chown -R $USER:$USER /etc/nginx/html
-
 echo "Hello World!" > /etc/nginx/html/index.html
 
 echo "server {
         listen 80;
-        listen [::]:80;
+        listen [::]:80 defult_server;
 
-        root /etc/nginx/html
-		index index.html index.htm index.nginx-debian.html;
+        root /etc/nginx/html;
+                index index.html index.htm index.nginx-debian.html;
 
         server_name _;
 }" > /etc/nginx/sites-available/defult
 
-sudo nginx -s restart
+nginx -s reload
