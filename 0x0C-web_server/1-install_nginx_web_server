@@ -1,20 +1,21 @@
 #!/usr/bin/env bash
-#  Install nginx web server
+
+# Install nginx web server
 sudo apt-get -y update
-sudo apt-get install -y nginx
+sudo apt-get -y install nginx
 
-mkdir /etc/nginx/html
-
-echo "Hello World!" > /etc/nginx/html/index.html
-
+# Set up Nginx configuration
 echo "server {
-        listen 80;
-        listen [::]:80 defult_server;
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
-        root /etc/nginx/html;
-                index index.html index.htm index.nginx-debian.html;
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
 
-        server_name _;
-}" > /etc/nginx/sites-available/defult
+        location / {
+                echo 'Hello World!';
+        }
+}" | sudo tee /etc/nginx/sites-available/default > /dev/null
 
-nginx -s reload
+# Restart Nginx
+sudo service nginx restart
