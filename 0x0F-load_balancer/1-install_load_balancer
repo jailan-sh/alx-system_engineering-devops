@@ -16,8 +16,8 @@ echo "
      backend my_servers
      	     balance roundrobin
 	     option httpchk
-             server 392110-web-01 54.196.48.32 check
-             server 392110-web-02 34.229.255.108 check
+	     server 392110-web-01 54.196.48.32 check
+	     server 392110-web-02 34.229.255.108 check
 " >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy start
