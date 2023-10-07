@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # configure nginx to port 80
-sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
-sudo kill "$(pgrep 'nginx' | head -1)"
+sudo apt-get -y install nginx
+sudo netstat -tuln | grep ":80.*LISTEN"
+sudo service nginx stop
