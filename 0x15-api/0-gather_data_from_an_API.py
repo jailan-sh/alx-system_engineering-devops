@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+""" script to for returning information about TODO list progress
+of a given employee ID
+""" 
+import json
+import requests
+import sys
+
+
+url1 = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
+url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(sys.argv[1])
+
+resp1 = requests.get(url1)
+resp2 = requests.get(url2)
+
+name = resp1.json()["name"]
+data = resp2.json()
+total = 0
+done = 0
+title = []
+
+for i in data:
+    total +=1
+    if data[i]["completed"] == True:
+        done += 1
+        title.append(data[i]["title"])
+
+
+print("Employee {} is done with tasks({}/{}):".format(name, done, total))
+print("\t{}".format(task for task in title))
