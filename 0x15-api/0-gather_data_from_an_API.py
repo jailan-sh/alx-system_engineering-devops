@@ -1,13 +1,12 @@
 #!/usr/bin/python3
-""" 
+"""
 script to for returning information about TODO list progress
-of a given employee ID
+a given id
 """
 if __name__ == "__main__":
     import json
     import requests
     import sys
-
 
     url1 = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
     url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
@@ -29,4 +28,4 @@ if __name__ == "__main__":
 
     print("Employee {} is done with tasks({}/{}):".format(name, done, total))
     for item in title:
-        print("\t{}".format(item))
+        print("\t {}".format(item))
