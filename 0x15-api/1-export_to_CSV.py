@@ -22,6 +22,6 @@ if __name__ == "__main__":
     with open("{}.cv".format(sys.argv[1]), "w") as file:
         csv_write = csv.writer(file, delimiter=',')
 
-        for task in data:
-            csv_write.writerow([data["userId"], name["name"],
-                                data["completed"], data["title"]])
+        for item in data:
+            csv_write.writerow([name["id"], name["name"],
+                                item["completed"], item["title"]])
