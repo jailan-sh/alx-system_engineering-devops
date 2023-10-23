@@ -15,15 +15,14 @@ resp2 = requests.get(url2)
 
 name = resp1.json()["name"]
 data = resp2.json()
-total = 0
+total = len(data)
 done = 0
 title = []
 
-for i in data:
-    total +=1
-    if data[i]["completed"] == True:
+for item in data:
+    if item["complete"] == True:
         done += 1
-        title.append(data[i]["title"])
+        title.append(item["title"])
 
 
 print("Employee {} is done with tasks({}/{}):".format(name, done, total))
