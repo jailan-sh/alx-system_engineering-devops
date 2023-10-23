@@ -3,13 +3,12 @@
 script to for returning information about TODO list progress
 of a given employee ID
 """
+if __name__ == "__main__":
+    import json
+    import requests
+    import sys
 
-import json
-import requests
-import sys
 
-
-if __name__ = "__main__":
     url1 = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
     url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
         sys.argv[1])
