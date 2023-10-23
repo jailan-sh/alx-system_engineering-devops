@@ -19,9 +19,9 @@ if __name__ == "__main__":
     name = resp1.json()
     data = resp2.json()
 
-    with open("{}.cv".format(sys.argv[1]), "w") as file:
+    with open("{}.cv".format(sys.argv[1]), mode="w") as file:
         csv_write = csv.writer(file, delimiter=',')
 
         for item in data:
-            csv_write.writerow([name["id"], name["name"],
+            csv_write.writerow([name["id"], name["username"],
                                 item["completed"], item["title"]])
