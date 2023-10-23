@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """ script to for returning information about TODO list progress
 of a given employee ID
-""" 
+"""
 import json
 import requests
 import sys
 
 
 url1 = "https://jsonplaceholder.typicode.com/users/{}".format(sys.argv[1])
-url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(sys.argv[1])
+url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+    sys.argv[1])
 
 resp1 = requests.get(url1)
 resp2 = requests.get(url2)
@@ -20,7 +21,7 @@ done = 0
 title = []
 
 for item in data:
-    if item["completed"] == True:
+    if item["completed"]:
         done += 1
         title.append(item["title"])
 
