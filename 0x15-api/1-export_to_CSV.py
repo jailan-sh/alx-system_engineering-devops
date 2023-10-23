@@ -23,5 +23,5 @@ if __name__ == "__main__":
         csv_write = csv.writer(file, delimiter=',')
 
         for task in data:
-            csv_write.writerow([data["userId"], name["id"],
+            csv_write.writerow([data["userId"], name["name"],
                                 data["completed"], data["title"]])
