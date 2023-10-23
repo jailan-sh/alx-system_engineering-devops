@@ -20,10 +20,11 @@ done = 0
 title = []
 
 for item in data:
-    if item["complete"] == True:
+    if item["completed"] == True:
         done += 1
         title.append(item["title"])
 
 
 print("Employee {} is done with tasks({}/{}):".format(name, done, total))
-print("\t{}".format(task for task in title))
+for item in title:
+    print("\t{}".format(item))
