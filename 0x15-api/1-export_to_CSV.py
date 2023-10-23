@@ -16,12 +16,12 @@ if __name__ == "__main__":
     resp1 = requests.get(url1)
     resp2 = requests.get(url2)
 
-    username = resp1.json()["name"]
+    name = resp1.json()
     data = resp2.json()
 
     with open("{}.cv".format(sys.argv[1]), "w") as file:
         csv_write = csv.writer(file, delimiter=',')
 
         for task in data:
-            csv_write.writerow([data["userId"], username,
+            csv_write.writerow([data["userId"], name["id"],
                                 data["completed"], data["title"]])
