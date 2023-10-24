@@ -22,8 +22,8 @@ if __name__ == "__main__":
     item = {}
 
     for element in data:
-        item = {"username": name["USERNAME"], "task": element["title"],
-                "completed": element["completed"]}
+        item = {"task": element["title"], "completed": element["completed"],
+                "username": name["USERNAME"]}
         tasks.append(item)
 
     inf = {name["id"]: tasks}
