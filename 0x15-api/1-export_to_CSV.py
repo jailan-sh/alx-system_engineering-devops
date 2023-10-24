@@ -24,5 +24,5 @@ if __name__ == "__main__":
                                quoting=csv.QUOTE_ALL)
 
         for item in data:
-            csv_write.writerow([data["userId"], name["username"],
+            csv_write.writerow([item["userId"], name["username"],
                                 item['completed'], item['title']])
