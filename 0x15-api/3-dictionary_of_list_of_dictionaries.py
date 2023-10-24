@@ -18,16 +18,16 @@ if __name__ == "__main__":
         all = []
         items = {}
         url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
-            names["id"])
+            user["id"])
 
         resp2 = requests.get(url2)
         data = repo2.json()
         for task in data:
-            if item["userId"] == names["id"]:
-                items = {"username": names["username"], "task": task["title"],
+            if item["userId"] == user["id"]:
+                items = {"username": user["username"], "task": task["title"],
                      "completed": task["completed"]}
                 all .append(items)
-        inf[names["id"]] = all
+        inf[user["id"]] = all
 
     with open("todo_all_employees.json", mode="w") as file:
         json.dump(inf, file)
