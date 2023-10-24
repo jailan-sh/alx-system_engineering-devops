@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     for element in data:
         item = {"task": element["title"], "completed": element["completed"],
-                "username": name["USERNAME"]}
+                "username": name["username"]}
         tasks.append(item)
 
     inf = {name["id"]: tasks}
