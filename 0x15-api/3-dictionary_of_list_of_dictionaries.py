@@ -13,19 +13,21 @@ if __name__ == "__main__":
     resp1 = requests.get(url1)
 
     names = resp1.json()
-    items = {}
-    all = []
+    inf = {}
     for user in names:
+        all = []
+        items = {}
         url2 = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
             names["id"])
 
         resp2 = requests.get(url2)
         data = repo2.json()
         for task in data:
-            items = {"username": names["username"], "task": task["title"],
+            if item["userId"] == names["id"]:
+                items = {"username": names["username"], "task": task["title"],
                      "completed": task["completed"]}
-        all .append(items)
-        inf = {names["id"]: all}
+                all .append(items)
+        inf[names["id"]] = all
 
     with open("todo_all_employees.json", mode="w") as file:
         json.dump(inf, file)
