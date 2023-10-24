@@ -21,9 +21,9 @@ if __name__ == "__main__":
             user["id"])
 
         resp2 = requests.get(url2)
-        data = repo2.json()
+        data = resp2.json()
         for task in data:
-            if item["userId"] == user["id"]:
+            if task["userId"] == user["id"]:
                 items = {"username": user["username"], "task": task["title"],
                          "completed": task["completed"]}
                 all .append(items)
