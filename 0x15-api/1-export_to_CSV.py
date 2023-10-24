@@ -23,6 +23,6 @@ if __name__ == "__main__":
         csv_write = csv.writer(file, delimiter=',', quotechar='"',
                                quoting=csv.QUOTE_ALL)
 
-        for item in todo:
+        for item in data:
             writer.writerow([name['id'], name['username'], item['completed'],
                              item['title']])
