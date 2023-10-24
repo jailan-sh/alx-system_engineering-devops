@@ -25,4 +25,4 @@ if __name__ == "__main__":
 
         for item in data:
             csv_write.writerow([item["userId"], name["username"],
-                                item['completed'], item['title']])
+                                item["completed"], item["title"]])
