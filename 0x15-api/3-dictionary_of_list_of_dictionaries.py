@@ -25,7 +25,7 @@ if __name__ == "__main__":
         for task in data:
             if item["userId"] == user["id"]:
                 items = {"username": user["username"], "task": task["title"],
-                     "completed": task["completed"]}
+                         "completed": task["completed"]}
                 all .append(items)
         inf[user["id"]] = all
 
